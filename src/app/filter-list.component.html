@@ -1,0 +1,12 @@
+<button (click)="refresh()">refresh (simulate HTTP request)</button>
+
+<ng-container [queryParamGroup]="paramGroup">
+  Filter: <input type="text" queryParamName="quickSearch" />
+</ng-container>
+
+<p>Value list:</p>
+<ul>
+  <li *ngFor="let value of values$ | async">{{ value }}</li>
+</ul>
+
+<button [routerLink]="['']">home</button>
